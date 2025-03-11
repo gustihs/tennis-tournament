@@ -7,7 +7,6 @@ namespace App\Services;
 
 use App\Models\Player;
 use App\Models\TennisMatch;
-use App\Repositories\TournamentRepository;
 use App\Models\Tournament;
 use App\Interfaces\ITournament;
 use App\Constants;
@@ -18,13 +17,6 @@ use MongoDB\Laravel\Eloquent\Builder;
 
 class TournamentService
 {
-    private $repository;
-
-    public function __construct()
-    {
-        $this->repository = new TournamentRepository();
-    }
-
     private function arePlayersOfSameGenderThanTournament(String $tGender, Array $players): bool
     {
         return array_all($players, function (Player $player) use ($tGender) {

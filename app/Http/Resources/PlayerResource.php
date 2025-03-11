@@ -21,7 +21,7 @@ class PlayerResource extends JsonResource
             'country' => $this->country,
             'skills' => [
                 'velocity' => (integer) $this->skills['velocity'],
-                'reaction' => (integer) this->skills['reaction'],
+                'reaction' => (integer) $this->skills['reaction'],
                 'force' => (integer) $this->skills['force'],
             ],
             'level' => (integer) $this->level,
